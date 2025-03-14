@@ -1,0 +1,21 @@
+.hero-img img {
+    width: 100svh;
+    margin-left: 38svh;
+}
+
+@media screen and (max-width: 1200px) {
+    .hero-img img {
+        width: 90svh;
+        margin-left: 0;
+    }
+
+}
+
+
+@media screen and (max-width: 600px) {
+    .hero-img img {
+        width: 50svh;
+        margin-left: 0;
+    }
+
+}

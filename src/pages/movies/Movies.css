@@ -1,0 +1,26 @@
+.movies-container{
+    margin-top: 100px;
+}
+
+.movie-list {
+	background: rgb(83,95,128);
+	background: linear-gradient(0deg, rgba(83,95,128,1) 0%, rgba(69,83,112,1) 69%);
+	height: 100vh;
+	width: 100%; 
+	margin-top: 30svh;
+	display: flex;
+	flex-direction: row;
+
+}
+
+.movie-list-logo {
+    height: 40svh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -17svh;
+}
+
+.movie-list-logo {
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+}
+  

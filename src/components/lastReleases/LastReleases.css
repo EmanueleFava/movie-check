@@ -1,0 +1,36 @@
+.last-releases {
+
+	background: rgb(83,95,128);
+	background: linear-gradient(0deg, rgba(83,95,128,1) 0%, rgba(69,83,112,1) 69%);
+	height: 100vh;
+	width: 100%; 
+	margin-top: 20svh;
+	display: flex;
+	flex-direction: row;
+	
+}
+
+.card-group{
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	gap: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20svh;
+	margin-bottom: 30px;
+}
+
+@media screen and (max-width: 500px) {
+
+    .last-releases img {
+		margin-top: -12svh !important;
+        width: 20svh !important;
+    }
+
+	.card-group {
+		display: flex;
+		flex-direction: column;
+	}
+
+}

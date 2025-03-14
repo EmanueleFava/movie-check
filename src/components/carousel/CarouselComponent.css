@@ -1,0 +1,59 @@
+/* Impostiamo la larghezza e l'altezza per il carosello */
+.carousel {
+    width: 50%;  /* Larghezza fissa del carosello */
+    max-height: 40vh;
+    margin: auto;  /* Centra il carosello */
+    overflow: hidden;  /* Impedisce che le immagini fuoriescano dal carosello */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);  /* Ombra per aggiungere profondità */
+    margin-top: 10svh;
+}
+
+/* Contenitore per l'immagine e l'overlay */
+.carousel-image-container {
+    position: relative;
+    width: 100%;
+  }
+
+/* Stile delle immagini */
+.carousel-item img {
+    width: 100%;  /* L'immagine si adatta alla larghezza del carosello */
+    height: 100%;  /* L'immagine riempie l'altezza del carosello */
+    object-fit: cover;
+    border-radius: 10px; 
+}
+
+/* Stile per la didascalia (titolo e descrizione) */
+.carousel-caption {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    opacity: 0;  /* Nascondi il testo di default */
+    visibility: hidden; /* Nascondi il testo */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Aggiungi transizione */
+  }
+  
+  /* Quando si passa sopra l'immagine, mostra la didascalia */
+  .carousel-image-container:hover .carousel-caption {
+    opacity: 1; /* Mostra il testo */
+    visibility: visible; /* Rendi visibile il testo */
+  }
+
+  /* Aggiungi l'ombra al testo per migliorarne la leggibilità */
+.carousel-caption h5, .carousel-caption p {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Aggiungi un'ombra per un contrasto migliore */
+  }
+
+/* Rendi il carosello visivamente più fluido */
+.carousel-inner {
+    overflow: hidden;  /* Nasconde le parti delle immagini che vanno oltre i bordi */
+    border-radius: 10px;  /* Bordo arrotondato per il contenitore */
+}
+
+/* Frecce di navigazione */
+.carousel-control-prev, .carousel-control-next {
+    color: #fff; /* Cambia il colore delle frecce di navigazione */
+}

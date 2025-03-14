@@ -1,0 +1,16 @@
+
+#root {
+  min-height: 100vh;
+  min-width: 100%;
+}
+
+body {
+  overflow: scroll;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+html {
+  scrollbar-width: none;
+}
