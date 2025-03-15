@@ -1,0 +1,45 @@
+.filter {
+    height: 40px;
+    margin-bottom: 30px;
+    width: 80px;
+    border: 2px solid rgba(69, 83, 112, 1);
+    border-radius: 8px;
+    background-color: rgba(110, 125, 160, 1) !important; /* Più chiaro */
+    color: white;
+    font-size: 16px;
+    padding: 5px 10px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.filter:focus {
+    border-color: white !important;
+    background-color: rgba(95, 110, 145, 1) !important; /* Più chiaro */
+}
+
+.filter:hover {
+    background-color: rgba(130, 150, 200, 0.9) !important; /* Più chiaro */
+}
+
+/* Stili moderni per il select */
+#film-genres {
+    width: 30%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid rgba(69, 83, 112, 1) !important;
+    background-color: rgba(110, 125, 160, 1) !important; /* Più chiaro */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#film-genres:focus {
+    border-color: white;
+    background-color: rgba(100, 115, 150, 0.9) !important; /* Più chiaro */
+}
+
+#film-genres:hover {
+    background-color: rgba(95, 110, 145, 0.85) !important; /* Più chiaro */
+}
+

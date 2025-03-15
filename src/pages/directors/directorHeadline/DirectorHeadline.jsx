@@ -6,13 +6,13 @@ function DirectorHeadline() {
     return (
         <>
             <HeadLine 
-            text={"Registra"}
+            text={"Random"}
             fontSize={"4rem"}
             fontWeight={700}
             color={"#2D3648"}
             />
             <HeadLine 
-            text={"del giorno"}
+            text={"Director"}
             fontSize={"4rem"}
             fontWeight={700}
             color={"#EA4D81"}
