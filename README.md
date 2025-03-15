@@ -1,12 +1,23 @@
-# React + Vite
+# Movie Check
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Movie Check è un'applicazione che consente agli utenti di visualizzare serie di film e registi con i relativi film connessi. Il backend è realizzato con **Java 8** e **Spring Boot**, esponendo una **GraphQL API**, mentre il frontend è sviluppato in **React** utilizzando **Apollo Client** per le query e **Bootstrap** per alcuni componenti dell'interfaccia.
 
-Currently, two official plugins are available:
+## Tecnologie Utilizzate
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Backend
+- **Java 8**
+- **Spring Boot**
+- **GraphQL API**
+- **Spring Data JPA**
+- **Hibernate**
+- **MySQL** (scegliere il database preferito)
+- **GraphQL Java Tools**
 
-## Expanding the ESLint configuration
+### Frontend
+- **React**
+- **Apollo Client**
+- **Bootstrap**
+- **React Router**
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+applicazione creata in collaborazione con [Miriana Zammito](https://github.com/MirianaZammito)
