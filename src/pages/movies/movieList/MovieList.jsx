@@ -1,6 +1,7 @@
 import { useQuery } from "@apollo/client";
 import { useState } from 'react';
-import { GET_MOVIES, getFilmPerGenere } from '../../../graphql/Queries';
+import { GET_MOVIES } from '../../../graphql/Queries';
+import Queries from '../../../graphql/Queries';
 import Filter from "../../../components/filter/Filter";
 import Card from "../../../components/card/Card";
 import MovieCheck from "../../../assets/movie-check.png";
@@ -8,9 +9,15 @@ import MovieCheck from "../../../assets/movie-check.png";
 function MovieList() {
     const [genere, setGenere] = useState("");
     const { data: allMoviesData, loading: allMoviesLoading, error: allMoviesError } = useQuery(GET_MOVIES);
-    const { data: filteredMoviesData, loading: filteredMoviesLoading, error: filteredMoviesError } = useQuery(getFilmPerGenere(genere), {
-        skip: !genere, 
-    });
+    const { data: filteredMoviesData, loading: filteredMoviesLoading, error: filteredMoviesError } = useQuery(
+        Queries.getFilmPerGenere(),
+        {
+            skip: !genere, // Salta la query se genere non è impostato
+            variables: {
+                genereFilmFilter: genere // Passa il valore nel formato corretto
+            },
+        }
+    );
 
     const handleFilter = (e) => {
         const selectedGenere = e.target.value;

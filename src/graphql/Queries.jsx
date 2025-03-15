@@ -1,5 +1,19 @@
 import { gql } from '@apollo/client';
 
+
+export const UTENTE_LOGIN = gql`
+    query UtenteLogin($email: String!, $password: String!) {
+        utenteLogin(email: $email, password: $password) {
+            id
+            email
+            nome
+            cognome
+            ruolo
+        }
+    }
+`;
+
+
 export const GET_MOVIES = gql`
     query GetAllFilm {
         getAllFilm {
@@ -28,10 +42,10 @@ export const GET_DIRECTORS = gql`
     }
 `;
 
-const getFilmPerGenere = (genere) => {
+const getFilmPerGenere = () => {
     const GET_FILTERED_MOVIES = gql`
-        query GetFilmPerGenere {
-            getFilmPerGenere(genereFilmFilter: "${genere}") {
+        query GetFilmPerGenere($genereFilmFilter: GenereFilmFilter!) {
+            getFilmPerGenere(genereFilmFilter: $genereFilmFilter) {
                 id
                 titolo
                 imageURL
@@ -44,6 +58,7 @@ const getFilmPerGenere = (genere) => {
     `;
     return GET_FILTERED_MOVIES;
 };
+
 
 const getFilmRegista = (idRegista) => {
     const GET_FILM = gql`
