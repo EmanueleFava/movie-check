@@ -1,8 +1,8 @@
-.movies-container{
+.directors-container{
     margin-top: 100px;
 }
 
-.movie-list {
+.director-list {
 	background: rgb(83,95,128);
 	background: linear-gradient(0deg, rgba(83,95,128,1) 0%, rgba(69,83,112,1) 69%);
 	height: 100vh;
@@ -13,14 +13,12 @@
 
 }
 
-.movie-list-logo {
+.director-list-logo {
     height: 40svh;
     margin-left: auto;
     margin-right: auto;
-	margin-top: 18svh;
-}
-
-.movie-list-logo {
+    margin-top: 18svh;
     filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
 }
+
   

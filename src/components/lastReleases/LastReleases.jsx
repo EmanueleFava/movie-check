@@ -24,9 +24,9 @@ function LastReleases() {
             <LastHeadline/>
             
             <div className="card-group">
-                <Card data={data}/>
-                <Card data={data}/>
-                <Card data={data}/>
+                <Card type={"movie"} data={data}/>
+                <Card type={"movie"} data={data}/>
+                <Card type={"movie"} data={data}/>
             </div>
         </div>
 

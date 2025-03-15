@@ -1,15 +1,23 @@
 import { Link } from "react-router-dom";
 import "./Card.css";
 
-function Card({ data }) {
+function Card({ type, data }) {
+
+    const isMovie = type === "movie";
+
+
     return (
-        <Link to={`/movieDetails`} state={{ movie: data }} className="card-link">
+        <Link to={ isMovie? `/movieDetails` : '/directorDetails' } 
+         state={isMovie ? { movie: data } : { director: data }}  
+         className="card-link">
+
             <div className="card-container">
-                <img src={data.imageURL} alt={data.titolo}></img>
-                <h6>{data.genere}</h6>
-                <h4>{data.annoUscita}</h4>
-                <h6 style={{color:'#262B36', marginBottom: '20px'}}><strong>{data.titolo}</strong></h6>
+                <img src={data.imageURL} alt={ isMovie? data.titolo : data.nome }></img>
+                <h6>{isMovie? data.genere : data.nazionalita}</h6>
+                <h4>{isMovie? data.annoUscita : data.dataNascita}</h4>
+                <h6 style={{color:'#262B36', marginBottom: '20px'}}><strong>{isMovie? data.titolo : data.nome + " " + data.cognome}</strong></h6>
             </div>
+
         </Link>
     );
 }

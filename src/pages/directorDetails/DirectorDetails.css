@@ -1,0 +1,73 @@
+.director-container {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    padding: 4em 20em;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.director-img  {
+
+    width: 60svh;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+
+}
+
+
+
+/* Schermi di Desktop Standard (oltre 1200px) */
+@media screen and (max-width: 1200px) {
+    .director-container {
+        padding: 4em 15%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .director-img  {
+
+        margin-top: 20px;
+    
+    }
+}
+
+/* Laptop o schermi di dimensioni medie (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+    .director-container {
+        padding: 4em 10%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* Tablet (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .director-container {
+        padding: 3em 20%;
+        width: auto;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+/* Smartphone medio (max-width: 600px) */
+@media screen and (max-width: 600px) {
+    .director-container {
+        padding: 2em 2%;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+
+    .director-container {
+        padding: 4em 2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: auto;
+    }
+
+}

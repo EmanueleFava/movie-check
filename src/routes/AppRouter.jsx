@@ -5,6 +5,8 @@ import Login from '../pages/login/Login'
 import SignUp from '../pages/signUp/SignUp'
 import Movies from '../pages/movies/Movies'
 import MovieDetails from '../pages/movieDetails/MovieDetails'
+import Directors from '../pages/directors/Directors';
+import DirectorDetails from '../pages/directorDetails/DirectorDetails';
 
 function AppRouter() {
   return (
@@ -14,6 +16,8 @@ function AppRouter() {
       <Route path="signup" element={<SignUp />} />
       <Route path="movies" element={<Movies />} />
       <Route path="movieDetails" element={<MovieDetails />} />
+      <Route path='directors' element={<Directors/>}></Route>
+      <Route path='directorDetails' element={<DirectorDetails/>}></Route>
     </Routes>
   );
 }

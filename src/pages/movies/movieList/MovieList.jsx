@@ -4,13 +4,13 @@ function MovieList() {
 
 
     return (
-
-
-        <div className="movie-list">
-        <img src={MovieCheck} className="movie-list-logo" alt="logo"/>
-
-
-        </div>
+        <>
+            <img src={MovieCheck} className="movie-list-logo" alt="logo"/>
+            <div className="movie-list">
+            </div>
+        
+        
+        </>
 
 
 
