@@ -24,7 +24,7 @@ function LastReleases() {
     if (error) return <pre>{error.message}</pre>;
 
     const lastReleases = data?.getAllFilm.filter((movie) => movie.annoUscita >= 2000) || [];
-    const lastFour = lastReleases.slice(0, 4); // Ottieni i primi 4 film
+    const lastFour = lastReleases.slice(0, 3); // Ottieni i primi 4 film
     
     return (
         <div className="last-releases">

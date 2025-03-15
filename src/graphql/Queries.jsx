@@ -28,11 +28,26 @@ export const GET_DIRECTORS = gql`
     }
 `;
 
+const getFilmPerGenere = (genere) => {
+    const GET_FILTERED_MOVIES = gql`
+        query GetFilmPerGenere {
+            getFilmPerGenere(genereFilmFilter: "${genere}") {
+                id
+                titolo
+                imageURL
+                annoUscita
+                durata
+                genere
+                descrizione
+            }
+        }
+    `;
+    return GET_FILTERED_MOVIES;
+};
 
-export default function getFilmRegista(idRegista) {
-
+const getFilmRegista = (idRegista) => {
     const GET_FILM = gql`
-            query Regista {
+        query Regista {
             regista(id: ${idRegista}) {
                 id
                 nome
@@ -52,9 +67,8 @@ export default function getFilmRegista(idRegista) {
                 }
             }
         } 
-    `
-
+    `;
     return GET_FILM;
+};
 
-
-}
+export default { getFilmPerGenere, getFilmRegista };

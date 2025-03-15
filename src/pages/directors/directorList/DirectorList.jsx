@@ -15,7 +15,7 @@ function DirectorList() {
         <>
             <img src={MovieCheck} className="director-list-logo" alt="logo"/>
             <div className="director-list">
-                {data?.getAllRegisti.map((director)=><Card type={"director"} data={director}></Card>)}
+                {data?.getAllRegisti.map((director)=><Card key={director.id} type={"director"} data={director}></Card>)}
             </div>
         </>
 

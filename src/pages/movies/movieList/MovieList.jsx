@@ -1,55 +1,42 @@
-import MovieCheck from "../../../assets/movie-check.png"
 import { useQuery } from "@apollo/client";
-import Card from "../../../components/card/Card";
-import { GET_MOVIES } from '../../../graphql/Queries'
+import { useState } from 'react';
+import { GET_MOVIES, getFilmPerGenere } from '../../../graphql/Queries';
 import Filter from "../../../components/filter/Filter";
-import { useState, useEffect } from 'react';
+import Card from "../../../components/card/Card";
+import MovieCheck from "../../../assets/movie-check.png";
 
 function MovieList() {
+    const [genere, setGenere] = useState("");
+    const { data: allMoviesData, loading: allMoviesLoading, error: allMoviesError } = useQuery(GET_MOVIES);
+    const { data: filteredMoviesData, loading: filteredMoviesLoading, error: filteredMoviesError } = useQuery(getFilmPerGenere(genere), {
+        skip: !genere, 
+    });
 
-    const [ genere, setGenere ] = useState("");
-    const { data, loading, error } = useQuery(GET_MOVIES);
-    const [ filteredMovies, setFilteredMovies ] = useState([]);
+    const handleFilter = (e) => {
+        const selectedGenere = e.target.value;
+        setGenere(selectedGenere);
+    };
 
-    useEffect(() => {
-        if (data) {
-            const allMovies = data.getAllFilm;
-            if (genere === "") {
-                setFilteredMovies(allMovies);
-            } else {
-                const moviesByGenere = allMovies.filter((movie) => movie.genere.includes(genere));
-                setFilteredMovies(moviesByGenere);
-            }
-        }
-    }, [data,genere])
+    if (allMoviesLoading || (genere && filteredMoviesLoading)) return <p>Loading...</p>;
+    if (allMoviesError || filteredMoviesError) return <pre>{allMoviesError?.message || filteredMoviesError?.message}</pre>;
 
-    
-    if (loading) return <p>Loading...</p>;
-    if (error) return <pre>{error.message}</pre>;
-
-
-    function handleFilter(e) {
-        const selectedGenere = e.target.value;  
-        setGenere(selectedGenere); 
-        console.log(selectedGenere);  
-    }
-    
+    const movies = genere ? filteredMoviesData?.getFilmPerGenere : allMoviesData?.getAllFilm;
 
     return (
         <>
-            <img src={MovieCheck} className="movie-list-logo" alt="logo"/>
-            <Filter handler={handleFilter} genere={genere}/>
+            <img src={MovieCheck} className="movie-list-logo" alt="logo" />
+            <Filter handler={handleFilter} genere={genere} />
             <div className="movie-list">
-                {filteredMovies.map((movie) => <Card key={movie.id}  type={"movie"} data={movie}/>)}
+                {movies && movies.length > 0 ? (
+                    movies.map((movie) => <Card key={movie.id} type={"movie"} data={movie} />)
+                ) : (
+                    <h4 style={{ color: "#ee4e83" }}>
+                        <strong>Nessun Film {genere} trovato</strong>
+                    </h4>
+                )}
             </div>
-        
-        
         </>
-    )
-
+    );
 }
-
-
-
 
 export default MovieList;
